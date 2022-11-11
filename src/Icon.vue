@@ -1,7 +1,20 @@
 <template>
   <div>
-    <svg>
-      <use xlink:href="#i-settings"></use>
+    <svg class="f-icon">
+      <use :xlink:href="`#i-${name}`"></use>
     </svg>
   </div>
 </template>
+
+<script>
+export default {
+  props:['name']
+}
+</script>
+<style>
+.f-icon {
+  height: 1em;
+  width: 1em;
+
+}
+</style>

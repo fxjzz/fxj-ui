@@ -1,8 +1,6 @@
 <template>
   <button class="f-button" :class="{[`icon-${iconPosition}`]:true}">
-    <svg v-if="icon" class="icon">
-      <use :xlink:href="`#i-${icon}`"></use>
-    </svg>
+    <f-icon class="icon" v-if="icon" :name="icon"/>
     <div class="content">
       <slot/>
     </div>
@@ -10,6 +8,7 @@
 </template>
 <script>
 export default {
+
   props: {
     icon:{},
     iconPosition:{
@@ -23,11 +22,6 @@ export default {
 }
 </script>
 <style lang="scss">
-.icon {
-  height: 1em;
-  width: 1em;
-
-}
 
 .f-button {
   font-size: var(--font-size);
